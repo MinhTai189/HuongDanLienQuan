@@ -1,0 +1,30 @@
+.gem{
+ 
+      width: auto;
+      height: 500px;
+      background: #364F6B;
+      border-radius: 50%
+    }
+	.g{
+		height:100px;
+		width:100px;
+		box-shadow:#FFF;
+        transition: all 0.5s;
+	}
+	.db{
+		margin:0px -37px 0px;
+	}
+	.db2{
+		margin:0px 37px 0px;
+	}
+	.kc{
+		height:9px;
+		}
+        .g:hover{
+            height: 120px;
+            width: 120px;
+        }
+
+        button:hover{
+            border: 2px white;
+        }

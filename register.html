@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Học chơi Liên Quân</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script type="text/javascript">
+    function kiemtra()  //hàm kiểm tra dữ liệu nhập vào Form
+{
+  var tdn=document.getElementById("tdn");   //biến username lấy giá trị từ thẻ có id="username"
+  var s= tdn.length;
+  var password=document.getElementById("password")
+  var repass=document.getElementById("repass")
+  if(tdn.value=="")        //nếu giá trị của username là rỗng
+  {
+
+    alert("Tên Đăng Nhập không được để trống");    //thông báo lỗi
+    document.dangky.canhbao1.src="Images/dangky/canhbao.png";
+    username.focus();     //đưa con trỏ về lại vị trí username trên Form
+    return false; 
+    }    //trả về kết quả false (Form không Submit được)
+
+  
+  if ((s)>16) 
+  {
+        alert("Tên đăng nhập tối đa 16 ký tự");
+        document.dangky.canhbao1.src="Images/dangky/canhbao.png";
+        return false;
+  }
+  if(password.value=="")
+  {
+
+    alert("Phải nhập vào mật khẩu");
+    document.dangky.canhbao2.src="Images/dangky/canhbao.png";
+    password.focus();
+    return false;
+  }
+  if(repass.value!=password.value)   //so sánh mật khẩu lần 1 và mật khẩu lần 2
+  
+  {
+    alert("Nhập lại mật khẩu không đúng");
+    document.dangky.canhbao3.src="Images/dangky/canhbao.png";
+    repass.focus();
+    return false;
+  }
+ 
+  
+  if(dongy.checked==false)
+  {
+    alert("Không đồng ý điều khoản thì không được đăng ký")
+    return false;
+  }
+}
+  </script>
+  <style>
+  ::placeholder{
+	  color:#FFF;
+  }
+  tb
+  {
+	  margin:20px;
+  }
+  </style>
+</head>
+<body background="Images/dangky/hinhnen.jpg" style="background-repeat:no-repeat;background-size:cover">
+<div class="container-fluid">
+<nav class="navbar navbar-fixed-top" style="background-color:#000; color:white;">
+    <div class="container-fluid">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="index.html">Tin tức</a></li>
+        <li><a href="guide.html" target="_blank">Hướng dẫn</a></li>
+        <li><a href="#">Đăng nhập</a></li>
+        <li><a href="#" target="_blank">Ý kiến đóng góp</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container" style="text-align:center">
+<div style="height:200px;"></div>
+<form name="dangky" id="dangky" style="font-weight:bold;color: white" onsubmit="return kiemtra()">
+<p><input placeholder="Họ Và Tên của bạn" style="background-color:#714d4d00;width:363px;height:35px;margin:10px;color:white" class="tb" type="text" id="hoten"></p>
+<p><input placeholder="Tên Đăng Nhập" style="background-color:#714d4d00;width:363px;height:35px;margin:10px;color:white" class="tb" type="text" id="tdn">
+<img id="canhbao1" src="">
+</p>
+<p><input placeholder="Mật Khẩu" style="background-color:#714d4d00;width:363px;height:35px;margin:10px;color:white" class="tb" type="password" id="password"><img id="canhbao2" src=""></p>
+<p><input placeholder="Nhập Lại Mật Khẩu" style="background-color:#714d4d00;width:363px;height:35px;margin:10px;color:white" class="tb" type="password" id="repass"><img id="canhbao3" src=""></p>
+<p><input placeholder="Email của bạn" style="background-color:#714d4d00;width:363px;height:35px;margin:10px;color:white" class="tb" type="email" id="email"></p>
+<p><input type="radio" id="dongy" name="dongy">Tôi đồng ý với điều khoản sử dụng</p>
+<input type="submit" name="submit" value="Đăng Ký" onclick="return kiemtra" style="background-color:#0000009c;width:80px;height:40px;margin:10px;color:white">
+</form>
+</div>
+</div>
+</body>
+</html>

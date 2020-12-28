@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@keyframes eqquipment{
+	from { transform:scale(10);
+	}
+	to { transform:scale(50);
+	}
+}
+e11: hover {
+background-color: #000;
+}	
+
